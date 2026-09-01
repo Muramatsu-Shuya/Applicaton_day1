@@ -7,24 +7,63 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="271dp"
-        android:layout_height="81dp"
-        android:text="ここは通行止めです．"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="102dp"
+        android:layout_height="72dp"
+        android:layout_marginEnd="16dp"
+        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintTop_toTopOf="@+id/editText" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="206dp"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/baseline_block_24"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="265dp" />
+        android:layout_width="141dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="135dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.587"
+        app:srcCompat="@drawable/baseline_block_24" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="-"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <Button
+        android:id="@+id/SaveButton"
+        android:layout_width="102dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
