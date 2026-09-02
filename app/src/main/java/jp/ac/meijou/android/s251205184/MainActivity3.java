@@ -36,5 +36,75 @@ public class MainActivity3 extends AppCompatActivity {
         binding.button0.setOnClickListener(view -> {
             binding.result.setText(binding.result.getText().toString() + "0");
         });
+
+        binding.button1.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText().toString() + "1");
+        });
+
+        binding.button2.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText().toString() + "2");
+        });
+
+        binding.button3.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText().toString() + "3");
+        });
+
+        binding.button4.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText().toString() + "4");
+        });
+
+        binding.button5.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText().toString() + "5");
+        });
+
+        binding.button6.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText().toString() + "6");
+        });
+
+        binding.button7.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText().toString() + "7");
+        });
+
+        binding.button8.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText().toString() + "8");
+        });
+
+        binding.button9.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText().toString() + "9");
+        });
+
+        binding.buttonAC.setOnClickListener(v -> {
+            binding.result.setText(null);
+        });
+
+        binding.buttonDiv.setOnClickListener(v -> {
+            binding.result.setText(binding.result.getText().toString() + "÷");
+        });
+
+        binding.buttonMulti.setOnClickListener(v -> {
+            binding.result.setText(binding.result.getText().toString() + "×");
+        });
+
+        binding.buttonSub.setOnClickListener(v -> {
+            binding.result.setText(binding.result.getText().toString() + "-");
+        });
+
+        binding.buttonPlus.setOnClickListener(v -> {
+            binding.result.setText(binding.result.getText().toString() + "+");
+        });
+
+        binding.buttonOK.setOnClickListener(view -> {
+            var ok_intent = new Intent();
+            ok_intent.putExtra("ret", "Ok");
+            setResult(RESULT_OK, ok_intent);
+            finish();
+        });
+
+        binding.buttonCancel.setOnClickListener(view -> {
+            setResult(RESULT_CANCELED);
+            finish();
+        });
     }
+
+
 }

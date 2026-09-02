@@ -5,10 +5,14 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.Optional;
 
 import jp.ac.meijou.android.s251205184.databinding.ActivityMain2Binding;
 import jp.ac.meijou.android.s251205184.databinding.ActivityMainBinding;
@@ -50,5 +54,30 @@ public class MainActivity2 extends AppCompatActivity {
             startActivity(intent);
         });
 
+        binding.buttonHappen.setOnClickListener(v -> {
+            var intent = new Intent(this, MainActivity3.class);
+            getActivityResult.launch(intent);
+        });
+
     }
+
+    private final ActivityResultLauncher<Intent> getActivityResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                switch (result.getResultCode()){
+                    case RESULT_OK:
+                        Optional.ofNullable(result.getData())
+                                .map(data -> data.getStringExtra("ret"))
+                                .map(text -> "Result:" + text)
+                                .ifPresent(text -> binding.textView4.setText(text));
+                        break;
+                    case  RESULT_CANCELED:
+                        binding.textView4.setText("Result: Canceled");
+                        break;
+                    default:
+                        binding.textView4.setText("Resul: Unknown(" + result.getResultCode() + ")");
+                        break;
+                }
+            }
+    );
 }

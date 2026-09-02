@@ -196,9 +196,28 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
+    <Button
+        android:id="@+id/button_OK"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="-100dp"
+        android:text="Ok"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
-
-
+    <Button
+        android:id="@+id/button_Cancel"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:text="Cancel"
+        app:layout_constraintTop_toTopOf="@+id/button_OK"
+        app:layout_constraintStart_toEndOf="@+id/button_OK"
+        />
 
 
 
